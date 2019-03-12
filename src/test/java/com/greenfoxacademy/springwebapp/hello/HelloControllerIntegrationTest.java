@@ -17,13 +17,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class HelloControllerIntegrationTest {
 
-    @Autowired
-    MockMvc mockMvc;
+  @Autowired
+  MockMvc mockMvc;
 
-    @Test
-    public void givenHelloURL_whenMockMVC_thenStatusOK_andReturnsWithHelloWorld() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/hello"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Hello World!"));
-    }
+  @Test
+  public void givenHelloURL_whenMockMVC_thenStatusOK_andReturnsWithHelloWorld() throws Exception {
+    mockMvc.perform(MockMvcRequestBuilders.get("/api/hello"))
+        .andExpect(status().isOk())
+        .andExpect(content().string("Hello World!"));
+  }
 }

@@ -13,7 +13,7 @@ public class HelloController {
   private HelloService helloService;
 
   @Autowired
-  public HelloController(HelloService helloService){
+  public HelloController(HelloService helloService) {
     this.helloService = helloService;
   }
 
