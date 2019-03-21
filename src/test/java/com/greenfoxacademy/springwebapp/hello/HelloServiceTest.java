@@ -1,17 +1,17 @@
 package com.greenfoxacademy.springwebapp.hello;
 
-import com.greenfoxacademy.springwebapp.services.HelloService;
+import com.greenfoxacademy.springwebapp.services.HelloServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class HelloServiceTest {
 
-  private HelloService helloService;
+  private HelloServiceImpl helloService;
 
   @Before
   public void init() {
-    helloService = new HelloService();
+    helloService = new HelloServiceImpl();
   }
 
   @Test
