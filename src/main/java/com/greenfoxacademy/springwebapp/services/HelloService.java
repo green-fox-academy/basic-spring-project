@@ -1,11 +1,6 @@
 package com.greenfoxacademy.springwebapp.services;
 
-import org.springframework.stereotype.Service;
+public interface HelloService {
 
-@Service
-public class HelloService {
-
-  public String getHelloWorld() {
-    return "Hello World!";
-  }
+  String getHelloWorld();
 }
