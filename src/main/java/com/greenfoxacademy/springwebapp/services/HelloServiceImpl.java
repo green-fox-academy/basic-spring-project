@@ -8,6 +8,4 @@ public class HelloServiceImpl implements HelloService {
   public String getHelloWorld() {
     return "Hello World!";
   }
-  asdsadsadasdasda
-  asdsadsadasdasda
 }
