@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/repo
 
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/openjdk:11-jdk
 
     environment:
       # Customize the JVM maximum heap limit
@@ -15,20 +15,23 @@ jobs:
       - checkout
 
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "build.gradle" }}
-          - v1-dependencies-
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - restore_cache:
+          key: v1-gradle-cache-{{ checksum "build.gradle" }}
+
 
       - run: gradle dependencies
 
       - save_cache:
           paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+            - ~/.gradle/wrapper
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - save_cache:
+          paths:
+            - ~/.gradle/caches
+          key: v1-gradle-cache-{{ checksum "build.gradle" }}
 
       - run: gradle checkstyleMain
-      - run: gradle build -x test -x checkstyleMain
+      - run: gradle checkstyleTest
+      - run: gradle build -x test -x checkstyleMain -x checkStyleTest
       - run: gradle test
-
-      - store_test_results:
-          path: build/test-results
