@@ -7,13 +7,9 @@
 
 ## Steps
 
-- Copy this repository
+- Copy a new repository on Github
+- Select `green-fox-academy/basic-spring-project` as the repository template or click the `Use this template` button at the top of the page
   - in order to initialise project team repo follow the project naming convention: https://docs.google.com/spreadsheets/d/1vdqn4i0GYWNDHL96jrNrXOZJJ6lQsN-_m3aFHGjOmng
-- Use the following commands:
-  - gradle bootRun - start your application
-  - gradle test - run your tests
-  - gradle checkstyleMain - start the linter on the application
-  - gradle checkstyleTest - start the linter on the tests
 
 
 ## GIT Workflow
@@ -24,15 +20,15 @@ Use `git pull` in order to have the most recent
 
 ### Start New Feature/Bugfix
 
-In order to minimise later merge conflicts always open feature branch from most recent state of `dev`.
+In order to minimise later merge conflicts always open feature branch from most recent state of `development`.
 
-- `git checkout dev`
+- `git checkout development`
 - `git pull`
 - `git checkout -b <branch_name>`
 
 ### Update Feature Branch
 
-This is usual to have an update on `dev` while you are working on your feature/bugfix and this is recommended to update your branch to keep consistency of your code. You can do this in 2 ways.
+This is usual to have an update on `development` while you are working on your feature/bugfix and this is recommended to update your branch to keep consistency of your code. You can do this in 2 ways.
 
 [`git merge` vs `git rebase`](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
@@ -55,27 +51,3 @@ Use `git merge dev` on your branch.
 ### Commit and Push
 
 You can work on your feature/bugfix separately but sometimes you may need to merge another branch into your branch (i.e. to try out your feature). In order to have clean workflow (and pull requests) always commit only feature related modifications. This is harder to reset files or hunks later.
-
-## Angular
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
-
-### Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-### Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-### Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-### Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
