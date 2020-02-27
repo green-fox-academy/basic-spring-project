@@ -6,8 +6,8 @@
 
 ## Steps    
 
-- Copy a new repository on Github
-- Select `green-fox-academy/basic-spring-project` as the repository template or click the `Use this template` button at the top of the page
+- Create a new repository on Github and select `green-fox-academy/basic-spring-project` as the repository template
+- OR Click the `Use this template` button at the top of the page
   - in order to initialise project team repo follow the project naming convention: https://docs.google.com/spreadsheets/d/1vdqn4i0GYWNDHL96jrNrXOZJJ6lQsN-_m3aFHGjOmng
 
 
