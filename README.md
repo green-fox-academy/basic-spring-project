@@ -2,10 +2,9 @@
 
 ## Dependencies
 
-- Java Development Kit - JDK 11
-- Java Runtime Environment - JRE 11
+- Java Development Kit - JDK 11.0.6
 
-## Steps
+## Steps    
 
 - Copy a new repository on Github
 - Select `green-fox-academy/basic-spring-project` as the repository template or click the `Use this template` button at the top of the page
