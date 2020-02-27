@@ -4,10 +4,9 @@ jobs:
     working_directory: ~/repo
 
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/openjdk:11-jdk
 
     environment:
-      # Customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
       TERM: dumb
     
@@ -16,19 +15,21 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "build.gradle" }}
-          - v1-dependencies-
+          - v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          - v1-gradle-cache-{{ checksum "build.gradle" }}
 
       - run: gradle dependencies
 
       - save_cache:
+          key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
           paths:
-            - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+            - ~/.gradle/wrapper
+      - save_cache:
+          key: v1-gradle-cache-{{ checksum "build.gradle" }}
+          paths:
+            - ~/.gradle/caches
 
       - run: gradle checkstyleMain
-      - run: gradle build -x test -x checkstyleMain
+      - run: gradle checkstyleTest
+      - run: gradle build -x test -x checkstyleMain -x checkStyleTest
       - run: gradle test
-
-      - store_test_results:
-          path: build/test-results
