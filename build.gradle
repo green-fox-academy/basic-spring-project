@@ -5,6 +5,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'checkstyle'
+apply plugin: 'jacoco'
 
 group = 'com.greenfoxacademy'
 version = '0.0.1-SNAPSHOT'
@@ -12,6 +13,17 @@ sourceCompatibility = '1.8'
 
 checkstyle {
     toolVersion "8.18"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        html.enabled true
+        html.destination file("${buildDir}/jacoco")    }
+}
+
+jacoco {
+    reportsDir = file("$buildDir/jacoco")
 }
 
 repositories {
