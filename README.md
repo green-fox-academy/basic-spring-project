@@ -1,6 +1,6 @@
 # Spring Basic Project
 
-[//]: # (## Game logic parameters (uncomment, if Tribes project) 
+[//]: # (# &#40;## Game logic parameters &#40;uncomment, if Tribes project&#41; )
 
 [//]: # (|        |Building time   ||Building cost       ||HP     |Effect                                                         |)
 
@@ -21,7 +21,7 @@
 
 
 - [Dependencies](#dependencies)
-- [Development rules:](#development-rules)
+- [Development rules](#development-rules)
 - [Processes](#processes)
 - [Useful links](#useful-links)
 - [Git Workflow](#git-workflow)
